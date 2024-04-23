@@ -12,7 +12,7 @@ type TCPPeer struct {
 	outbound bool //dial to retrieve a connection: outbound = true, if accept to retrieve: outbound = false;
 }
 
-func newTCPPeer(conn net.Conn, outbound bool) *TCPPeer {
+func NewTCPPeer(conn net.Conn, outbound bool) *TCPPeer {
 	return &TCPPeer{
 		conn:     conn,
 		outbound: outbound,
@@ -58,5 +58,6 @@ func (t *TCPTransport) startAcceptLoop() {
 }
 
 func (t *TCPTransport) handleConn(conn net.Conn) {
-	fmt.Printf("new incoming connection %+v\n", conn)
+	peer := NewTCPPeer(conn, true)
+	fmt.Printf("new incoming connection %+v\n", peer)
 }
