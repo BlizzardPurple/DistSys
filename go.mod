@@ -1,6 +1,6 @@
 module github.com/BlizzardPurple/DistSys
 
-go 1.22.2
+go 1.22.2 // 1.23 for wsl in pc
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
