@@ -1,12 +1,14 @@
 package main
 
-import{
+import (
 	"fmt"
-	"github.com/BlizzardPurple/DistSys/p2p"
-} 
+	"log"
+
+	"https://github.com/BlizzardPurple/DistSys/tree/master/p2p"
+)
 
 func main() {
-	tr:=p2p.NewTCPTransport(":3000")
+	tr := p2p.NewTCPTransport(":3000")
 	log.Fatal(tr.ListenAndAccept())
 	select {}
 	fmt.Println("Choochie")
